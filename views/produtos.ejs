@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Produtos</title>
+        <style>
+            table{
+                width: 50%;
+            } 
+            th{
+                height: 30px;
+                background-color: #4CAF50;
+            }
+            th,td{
+                border-bottom: 1px solid #ddd;
+            }
+            tr:hover{background-color: #f5f5f5;}
+            input [type=text]{
+                width: 50%;
+            }
+            button{
+                background-color: #04AA6D;
+                border: nome;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 6px 10px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+            </tr>
+
+            <% for(let i = 0; i < p.length; i++) {%>
+                <tr>
+                    <td><%= p[i].id %> </td>
+                    <td><%= p[i].nome %> </td>
+                    <td><%= p[i].descricao %> </td>
+                    <td><%= p[i].preco %> </td>  
+                 </tr>    
+            <% } %> 
+             
+        </table>
+        <a href="/produtos-cadastrar"><button>Cadastrar Produto</button></a>
+        <a href="/"><button type="submit">Voltar</button></a>
+    </body>
+</html>

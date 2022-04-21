@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Categorias</title>
+        <style>
+            table{
+                width: 50%;
+            } 
+            th{
+                height: 30px;
+                background-color: #4CAF50;
+            }
+            th,td{
+                border-bottom: 1px solid #ddd;
+            }
+            tr:hover{background-color: #f5f5f5;}
+            input [type=text]{
+                width: 50%;
+            }
+            button{
+                background-color: #04AA6D;
+                border: nome;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset style="width: 45%;">
+            <form action="/categoria-salvar" method="post">
+                <div>
+                   <label for="chave">Chave</label><br/>
+                   <input type="text" name="chave"/> 
+                </div>
+                <br/>
+                <div>
+                    <label for="valor">Valor</label><br/>
+                    <input type="text" name="valor"/> 
+                 </div>
+                 <br/>
+                 <div class="button">
+                    <button type="submit">Cadastrar</button>
+                 </div>
+            </form>
+        </fieldset>
+
+        <br/>
+
+        <table>
+            <tr>
+                <th>Chave</th>
+                <th>Valor</th>
+                <th>Deletar</th>
+            </tr>
+
+            <% for(let i = 0; i < c.length; i++) {%>
+                <tr>
+                    <td><%= c[i].chave %> </td>
+                    <td><%= c[i].valor %> </td>
+                    <td><a href="/categoria-deletar"><button  style="background: #4CAF50; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 10px;">Deletar</button></a></td>
+                </tr>    
+            <% } %> 
+             
+        </table>
+
+        <form action="/">
+            <div>
+                <button type="submit">Voltar</button>
+            </div>
+        </form>
+    </body>
+</html>
